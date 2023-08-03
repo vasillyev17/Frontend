@@ -42,5 +42,3 @@ let notes = [
         category: "Task",
     },
 ];
-
-
