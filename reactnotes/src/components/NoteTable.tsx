@@ -56,7 +56,7 @@ const NoteTable: React.FC<NoteTableProps> = ({ isArchive }) => {
                     {
                         isArchive ?
                             <td>
-                                <button onClick={() => handleUnarchive(index)}>Unarchive</button>
+                                <button onClick={() => handleUnarchive(index)}><i className="bi bi-box-arrow-up" /></button>
                             </td>
                             :
                             <td>
@@ -67,12 +67,11 @@ const NoteTable: React.FC<NoteTableProps> = ({ isArchive }) => {
                                         onClose={handleEditFormClose}
                                     />
                                 ) : (
-                                    <>
-                                        <button onClick={() => handleEdit(index)}>Edit</button>
-                                        <button onClick={() => handleRemove(index)}>Remove</button>
-                                        <button onClick={() => handleArchive(index)}>Archive</button>
-
-                                    </>
+                                    <div>
+                                        <button onClick={() => handleEdit(index)}><i className="bi bi-pencil" /></button>
+                                        <button onClick={() => handleRemove(index)}><i className="bi bi-trash" /></button>
+                                        <button onClick={() => handleArchive(index)}><i className="bi bi-archive" /></button>
+                                    </div>
                                 )}
                             </td>
                     }

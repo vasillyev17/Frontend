@@ -15,6 +15,7 @@ const NoteForm: React.FC<NoteFormProps> = ({ index, note, onClose }) => {
         content: note?.content || '',
         category: note?.category || 'Task'
     });
+
     const handleSave = () => {
         if (!index) {
             performAddNote();
@@ -25,9 +26,6 @@ const NoteForm: React.FC<NoteFormProps> = ({ index, note, onClose }) => {
             };
 
             dispatch(editNote({index, updatedNote}));
-            if (onClose) {
-                onClose();
-            }
         }
         handleCancel();
     };
@@ -50,6 +48,9 @@ const NoteForm: React.FC<NoteFormProps> = ({ index, note, onClose }) => {
             content: '',
             category: 'Task'
         });
+        if (onClose) {
+            onClose();
+        }
     };
 
     return (
