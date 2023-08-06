@@ -1,7 +1,7 @@
 import React from 'react';
 import NotesPage from './containers/NotesPage';
 import ArchivedNotesPage from './containers/ArchivedNotesPage';
-import NoteSummaryPage from "./containers/NoteSummaryPage";
+import NoteSummaryPage from './containers/NoteSummaryPage';
 import './style.css'
 
 const App: React.FC = () => {

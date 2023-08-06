@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/rootReducer';
 import { archiveNote, removeNote, unarchiveNote } from '../redux/notesSlice'
-import NoteEditForm from './NoteEditForm';
+import NoteForm from './NoteForm';
 
 interface NoteTableProps {
     isArchive: boolean;
@@ -61,7 +61,7 @@ const NoteTable: React.FC<NoteTableProps> = ({ isArchive }) => {
                             :
                             <td>
                                 {editIndex === index ? (
-                                    <NoteEditForm
+                                    <NoteForm
                                         index={index}
                                         note={note}
                                         onClose={handleEditFormClose}

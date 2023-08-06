@@ -1,45 +1,75 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { createNote } from '../redux/notesSlice';
-const NoteForm: React.FC = () => {
-    const dispatch = useDispatch();
-    const [noteName, setNoteName] = useState('');
-    const [noteContent, setNoteContent] = useState('');
-    const [noteCategory, setNoteCategory] = useState('Task');
+import { createNote, editNote, Note } from '../redux/notesSlice';
 
+interface NoteFormProps {
+    index?: number;
+    note?: Note;
+    onClose?: () => void;
+}
+
+const NoteForm: React.FC<NoteFormProps> = ({ index, note, onClose }) => {
+    const dispatch = useDispatch();
+    const [currentNote, setCurrentNote] = useState({
+        name: note?.name || '',
+        content: note?.content || '',
+        category: note?.category || 'Task'
+    });
     const handleSave = () => {
-        if (noteName && noteContent && noteCategory) {
-            const currentDate = new Date();
-            dispatch(createNote({time: currentDate.toString(), name: noteName, content: noteContent, category: noteCategory }));
-            setNoteName('');
-            setNoteContent('');
-            setNoteCategory('Task');
+        if (!index) {
+            performAddNote();
+        } else if (index) {
+            const updatedNote = {
+                ...currentNote,
+                time: note?.time || '',
+            };
+
+            dispatch(editNote({index, updatedNote}));
+            if (onClose) {
+                onClose();
+            }
         }
+        handleCancel();
     };
+
+    const performAddNote = () => {
+        if (currentNote.name && currentNote.content && currentNote.category) {
+            const currentDate = new Date();
+            dispatch(createNote({
+                time: currentDate.toString(),
+                name: currentNote.name,
+                content: currentNote.content,
+                category: currentNote.category
+            }));
+        }
+    }
+
     const handleCancel = () => {
-        setNoteName('');
-        setNoteContent('');
-        setNoteCategory('Task');
+        setCurrentNote({
+            name: '',
+            content: '',
+            category: 'Task'
+        });
     };
 
     return (
         <div>
             <input
-                type="text"
-                value={noteName}
-                onChange={(e) => setNoteName(e.target.value)}
-                placeholder="Note Name"
+                type='text'
+                value={currentNote.name}
+                onChange={(e) => setCurrentNote({ ...currentNote, name: e.target.value })}
+                placeholder='Note Name'
             />
             <input
-                type="text"
-                value={noteContent}
-                onChange={(e) => setNoteContent(e.target.value)}
-                placeholder="Note Content"
+                type='text'
+                value={currentNote.content}
+                onChange={(e) => setCurrentNote({ ...currentNote, content: e.target.value })}
+                placeholder='Note Content'
             />
-            <select value={noteCategory} onChange={(e) => setNoteCategory(e.target.value)}>
-                <option value="Task">Task</option>
-                <option value="Random Thought">Random Thought</option>
-                <option value="Idea">Idea</option>
+            <select value={currentNote.category} onChange={(e) => setCurrentNote({ ...currentNote, category: e.target.value })}>
+                <option value='Task'>Task</option>
+                <option value='Random Thought'>Random Thought</option>
+                <option value='Idea'>Idea</option>
             </select>
             <button onClick={handleSave}>Save</button>
             <button onClick={handleCancel}>Cancel</button>
