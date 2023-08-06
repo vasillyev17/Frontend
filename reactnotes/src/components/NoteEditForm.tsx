@@ -19,7 +19,7 @@ const NoteEditForm: React.FC<NoteEditFormProps> = ({ index, note, onClose }) => 
         if (editedNote.name && editedNote.content && editedNote.category) {
             const updatedNote = {
                 ...editedNote,
-                time: note.time, // Include the 'time' property
+                time: note.time,
             };
 
             dispatch(editNote({ index, updatedNote }));

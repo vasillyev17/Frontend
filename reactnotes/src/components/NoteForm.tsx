@@ -9,7 +9,8 @@ const NoteForm: React.FC = () => {
 
     const handleSave = () => {
         if (noteName && noteContent && noteCategory) {
-            dispatch(createNote({time: "", name: noteName, content: noteContent, category: noteCategory }));
+            const currentDate = new Date();
+            dispatch(createNote({time: currentDate.toString(), name: noteName, content: noteContent, category: noteCategory }));
             setNoteName('');
             setNoteContent('');
             setNoteCategory('Task');

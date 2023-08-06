@@ -1,12 +1,16 @@
 import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/rootReducer';
-import {archiveNote, editNote, removeNote, unarchiveNote} from '../redux/notesSlice'
+import { archiveNote, removeNote, unarchiveNote } from '../redux/notesSlice'
 import NoteEditForm from './NoteEditForm';
 
-const NoteTable = (props: {isArchive: boolean}) => {
+interface NoteTableProps {
+    isArchive: boolean;
+}
+
+const NoteTable: React.FC<NoteTableProps> = ({ isArchive }) => {
     const dispatch = useDispatch();
-    const notes = useSelector((state: RootState) => props.isArchive ? state.notes.archivedNotes : state.notes.notes);
+    const notes = useSelector((state: RootState) => isArchive ? state.notes.archivedNotes : state.notes.notes);
 
     const [editIndex, setEditIndex] = useState(-1);
 
@@ -50,7 +54,7 @@ const NoteTable = (props: {isArchive: boolean}) => {
                     <td>{note.content}</td>
                     <td>{getDatesMentioned(note.content)}</td>
                     {
-                        props.isArchive ?
+                        isArchive ?
                             <td>
                                 <button onClick={() => handleUnarchive(index)}>Unarchive</button>
                             </td>
