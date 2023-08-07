@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7bc80fd2-c754-4e17-a77b-00153ac3fbb6" name="Changes" comment="-fixed edit form cancelation&#10;-added button icons for row actions" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2TbyQuS2u8ZBxjuRk6czTNRniF3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "task3",
+    "last_opened_file_path": "C:/Users/ihor/Desktop/Frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\ihor\\Desktop\\Frontend\\notes-api\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7bc80fd2-c754-4e17-a77b-00153ac3fbb6" name="Changes" comment="" />
+      <created>1691326063412</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691326063412</updated>
+      <workItem from="1691326069113" duration="6770000" />
+      <workItem from="1691408947040" duration="3370000" />
+      <workItem from="1691416402333" duration="351000" />
+      <workItem from="1691416955099" duration="113000" />
+      <workItem from="1691417080674" duration="272000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial project">
+      <option name="closed" value="true" />
+      <created>1691326662628</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691326662628</updated>
+    </task>
+    <task id="LOCAL-00002" summary="-fixed date in note creation">
+      <option name="closed" value="true" />
+      <created>1691328670155</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691328670155</updated>
+    </task>
+    <task id="LOCAL-00003" summary="-made form reuse for creating and editing notes">
+      <option name="closed" value="true" />
+      <created>1691330685448</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691330685448</updated>
+    </task>
+    <task id="LOCAL-00004" summary="-fixed edit form cancelation&#10;-added button icons for row actions">
+      <option name="closed" value="true" />
+      <created>1691332056888</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691332056888</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial project" />
+    <MESSAGE value="-fixed date in note creation" />
+    <MESSAGE value="-made form reuse for creating and editing notes" />
+    <MESSAGE value="-fixed edit form cancelation&#10;-added button icons for row actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="-fixed edit form cancelation&#10;-added button icons for row actions" />
+  </component>
+</project>
