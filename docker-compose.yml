@@ -1,0 +1,31 @@
+version: '3'
+services:
+  nodejs-server:
+    build:
+      context: ./notes-api
+      dockerfile: Dockerfile
+    container_name: notes-api
+    ports:
+      - "3000:3000"
+    environment:
+      PGHOST: postgres-db
+      PGUSER: test
+      PGPASSWORD: test
+      PGDATABASE: notes
+    depends_on:
+      - postgres-db
+
+  postgres-db:
+    image: postgres:latest
+    container_name: my-postgres-db
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: notes
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
